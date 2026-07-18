@@ -1,0 +1,836 @@
+/* ==========================================================================
+   0. BASE GLOBAL (Fontes, Variáveis & Reset)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --font-primary: 'Poppins', sans-serif;
+
+    /* Cores Principais */
+    --color-blue: #1a2b5e;
+    --color-blue-rgb: 26, 43, 94;
+    --color-yellow: #ffd000;
+    --color-yellow-light: #ffe047;
+
+    /* Cores de Fundo */
+    --color-bg: #f5f5f7;
+    --color-bg-white: #ffffff;
+    --color-bg-cream: #faf8f2;
+
+    /* Cores de Texto */
+    --color-text-dark: #000000;
+    --color-text-gray: #555555;
+    --color-text-gray-light: #777777;
+    --color-text-light: #e0e6ed;
+    --color-text-white: #ffffff;
+
+    /* Cores de Ação (WhatsApp) */
+    --color-whatsapp: #25D366;
+    --color-whatsapp-dark: #20ba59;
+    --color-whatsapp-floating: #29a71b;
+}
+
+/* 0.1 Reset padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links do menu */
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg);
+    color: var(--color-text-dark);
+    overflow-x: hidden;
+}
+
+/* 0.2 Títulos e textos padrão de seção (usados em várias seções abaixo) */
+h2 {
+    font-size: 2rem;
+    color: var(--color-blue);
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section > p {
+    text-align: center;
+    color: var(--color-text-gray);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+
+/* ==========================================================================
+   1. CABEÇALHO (HEADER)
+   ========================================================================== */
+header {
+    background-color: var(--color-bg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.089);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 65px; /* Altura perfeita para manter o logo proporcional */
+    width: auto;
+    display: block;
+}
+
+/* 1.1 Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-blue);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--color-yellow); /* Efeito hover com o amarelão da loja */
+}
+
+/* 1.2 Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+/* ==========================================================================
+   2. SEÇÃO HERO (#INICIO)
+   ========================================================================== */
+#inicio {
+    max-width: 100%;
+    position: relative;
+    height: 80vh; /* Ocupa 80% da altura da tela */
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    scroll-margin-top: 100px; 
+}
+
+/* 2.1 Slideshow de fundo */
+.hero-slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-slides .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Escondida por padrão */
+    transition: opacity 1.5s ease-in-out; /* Troca suave entre fotos */
+}
+
+.hero-slides .slide.active {
+    opacity: 1; /* Ganha a classe 'active' via JS */
+}
+
+/* Camada escura sobre a foto para destacar o texto branco */
+.hero-slides::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(var(--color-blue-rgb), 0.75), rgba(var(--color-blue-rgb), 0.85));
+    z-index: 2;
+}
+
+/* 2.2 Conteúdo (título, texto e botão) */
+.hero-conteudo {
+    position: relative;
+    z-index: 3;
+    color: var(--color-text-white);
+    padding: 0 20px;
+    max-width: 800px;
+}
+
+#inicio h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+#inicio p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: var(--color-text-light);
+}
+
+.btn-hero {
+    text-decoration: none;
+    background-color: var(--color-yellow);
+    color: var(--color-blue);
+    padding: 15px 35px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(255, 208, 0, 0.4);
+    transition: all 0.3s ease;
+    display: inline-block;
+    animation: pulsarBotao 2.5s infinite;
+}
+
+.btn-hero:hover {
+    transform: scale(1.05);
+    background-color: var(--color-yellow-light);
+}
+
+/* 2.3 Responsividade */
+@media (max-width: 768px) {
+    #inicio {
+        height: 60vh;
+        padding: 80px 20px;
+    }
+    #inicio h1 {
+        font-size: 2rem;
+    }
+    #inicio p {
+        font-size: 1rem;
+    }
+}
+
+
+/* ==========================================================================
+   3. FAIXA DE CONFIANÇA (BENEFÍCIOS)
+   ========================================================================== */
+.faixa-confianca {
+    background-color: var(--color-bg-cream);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border-radius: 12px;
+    max-width: 1200px;
+    margin: -30px auto 40px auto; /* Negativo de propósito: "flutua" por cima do Hero */
+    position: relative;
+    z-index: 10;
+    padding: 25px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* 3.1 Cada item de benefício */
+.beneficio-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    min-width: 220px; /* Garante tamanho mínimo no mobile */
+}
+
+.beneficio-item h4 {
+    color: var(--color-blue);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.beneficio-item p {
+    color: var(--color-text-gray-light);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* 3.2 Ícones */
+.icone-beneficio {
+    font-size: 1.8rem;
+}
+
+.icone-beneficio img {
+    width: 64px;
+    height: auto;
+    filter: invert(13%) sepia(48%) saturate(3015%) hue-rotate(213deg) brightness(96%) contrast(92%);
+}
+
+/* 3.3 Responsividade */
+@media (max-width: 768px) {
+    .faixa-confianca {
+        margin: 20px 20px; /* Tira o efeito flutuante no mobile para alinhar melhor */
+        padding: 20px;
+    }
+}
+
+
+/* ==========================================================================
+   4. GALERIA DE AMBIENTES (#AMBIENTES)
+   ========================================================================== */
+#ambientes {
+    scroll-margin-top: 90px; 
+}
+
+
+.ambiente-premium {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg-white);
+    border-radius: 16px;
+    overflow: visible; /* Permite as imagens "espiarem" para fora do card */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 60px; /* Espaço extra para as imagens que saem por cima */
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+    /* Variáveis do leque: controlam o ângulo de rotação da 2ª foto.
+       O card .invertido espelha os valores abaixo, assim o leque sempre
+       abre para FORA do card nos dois formatos (normal e invertido). */
+    --leque-giro-repouso: -2deg;
+    --leque-giro-aberto: 3deg;
+}
+
+.premium-imagem {
+    flex: 1;
+    height: 400px;
+    position: relative;
+    background-color: var(--color-blue);
+    border-radius: 16px 0 0 16px; /* Arredonda só os cantos da esquerda */
+    overflow: visible;
+}
+
+/* 4.1 Efeito leque (fotos empilhadas com corte diagonal) */
+.premium-imagem .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    border-radius: 16px 0 0 16px;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%); /* Corte diagonal */
+    transition: transform 0.55s cubic-bezier(0.23, 1, 0.32, 1),
+                opacity   0.55s ease,
+                z-index   0s;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(0) rotate(0deg);
+}
+
+/* Estado de repouso: foto ativa na frente, a próxima ligeiramente atrás */
+.premium-imagem .slide.active {
+    z-index: 2;
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+}
+.premium-imagem .slide.next {
+    z-index: 1;
+    opacity: 1;
+    transform: translateY(8px) rotate(var(--leque-giro-repouso));
+    transform-origin: bottom center;
+}
+
+/* Estado aberto: hover no desktop, ou classe .ativo-leque no mobile */
+.ambiente-premium:hover .premium-imagem .slide.active,
+.ambiente-premium.ativo-leque .premium-imagem .slide.active {
+    transform: translateY(18px) scale(0.97);
+    opacity: 0.9;
+    z-index: 1;
+}
+.ambiente-premium:hover .premium-imagem .slide.next,
+.ambiente-premium.ativo-leque .premium-imagem .slide.next {
+    transform: translateY(-55px) rotate(var(--leque-giro-aberto)) scale(0.93);
+    opacity: 1;
+    z-index: 3;
+    transform-origin: bottom center;
+}
+
+/* 4.2 Ajustes do bloco invertido (imagem na direita) */
+.ambiente-premium.invertido {
+    flex-direction: row-reverse;
+    --leque-giro-repouso: 2deg;  /* espelha o giro do bloco normal */
+    --leque-giro-aberto: -3deg;  /* espelha o giro do bloco normal */
+}
+.ambiente-premium.invertido .premium-imagem {
+    border-radius: 0 16px 16px 0;
+}
+.ambiente-premium.invertido .premium-imagem .slide {
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); /* Corte espelhado */
+    border-radius: 0 16px 16px 0;
+}
+.ambiente-premium.invertido .premium-texto h3 {
+    text-align: right;
+}
+.ambiente-premium.invertido .premium-texto {
+    align-items: flex-end;
+    text-align: right;
+}
+
+/* 4.3 Texto do card */
+.premium-texto {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.premium-texto span {
+    color: var(--color-yellow-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.premium-texto h3 {
+    font-size: 2rem;
+    color: var(--color-blue);
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.premium-texto p {
+    font-size: 1.1rem;
+    color: var(--color-text-gray);
+    line-height: 1.6;
+}
+
+/* 4.4 Responsividade (desativa o clip-path e o leque no celular) */
+@media (max-width: 768px) {
+    .ambiente-premium {
+        flex-direction: column !important;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+
+    .premium-imagem {
+        order: -1;
+        flex: none !important;
+        width: 100% !important;
+        height: 260px !important;
+        position: relative !important;
+        border-radius: 16px 16px 0 0;
+        overflow: hidden;
+    }
+
+    .premium-imagem .slide {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        clip-path: none !important;
+        border-radius: 16px 16px 0 0;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .premium-imagem .slide:not(.active) {
+        opacity: 0 !important;
+        pointer-events: none;
+    }
+
+    .premium-texto {
+        flex: none !important;
+        width: 100% !important;
+        padding: 30px 20px;
+    }
+}
+
+
+/* ==========================================================================
+   5. MARCAS PARCEIRAS (#MARCAS)
+   ========================================================================== */
+#marcas {
+    background-color: var(--color-bg);
+    max-width: 100%;
+    padding: 20px 0; /* Barra de confiança discreta */
+    overflow: hidden;
+    scroll-margin-top: 100px;
+}
+
+.marcas-wrapper {
+    width: 100%;
+    display: flex;
+}
+
+/* 5.1 Carrossel infinito */
+.marcas-track {
+    display: flex;
+    gap: 55px; /* O gap cuida do espaçamento uniforme entre TODOS os logos,
+                  inclusive na "costura" entre os blocos duplicados */
+    width: max-content;
+    animation: carrosselInfinito 15s linear infinite;
+}
+
+.marcas-track img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.55;
+    transition: all 0.3s ease;
+}
+
+.marcas-track:hover {
+    animation-play-state: paused;
+}
+
+.marcas-track img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes carrosselInfinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50.5%);
+    }
+}
+
+
+/* ==========================================================================
+   6. PERGUNTAS FREQUENTES (#FAQ)
+   ========================================================================== */
+#faq {
+    background-color: var(--color-bg);
+    scroll-margin-top: 70px; 
+}
+
+.faq-lista {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    background-color: var(--color-bg-white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    border-left: 5px solid var(--color-yellow);
+}
+
+.faq-item h4 {
+    color: var(--color-blue);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    color: var(--color-text-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+/* ==========================================================================
+   7. FORMULÁRIO DE ORÇAMENTO (#ORCAMENTO)
+   ========================================================================== */
+#orcamento {
+    background-color: var(--color-bg);
+    padding: 60px 20px;
+}
+
+.orcamento-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--color-bg-white);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid var(--color-yellow);
+}
+
+/* 7.1 Campos do formulário */
+.form-orcamento {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.form-grupo label {
+    font-weight: 600;
+    color: var(--color-blue);
+    font-size: 0.95rem;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+    padding: 12px 16px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+    border-color: var(--color-blue);
+    background-color: var(--color-bg-white);
+    box-shadow: 0 0 0 3px rgba(var(--color-blue-rgb), 0.1);
+}
+
+.form-grupo textarea {
+    resize: vertical;
+}
+
+/* 7.2 Botão de envio */
+.btn-enviar {
+    background-color: var(--color-yellow);
+    color: var(--color-blue);
+    border: none;
+    padding: 16px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 208, 0, 0.3);
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: var(--color-yellow-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 208, 0, 0.4);
+}
+
+.btn-enviar:active {
+    transform: translateY(0);
+}
+
+/* 7.3 Responsividade */
+@media (max-width: 768px) {
+    .orcamento-container {
+        padding: 25px 20px;
+    }
+}
+
+
+/* ==========================================================================
+   8. CONTATO & LOCALIZAÇÃO (#CONTATO)
+   ========================================================================== */
+#contato {
+    background-color: var(--color-blue);
+    color: var(--color-text-white);
+    max-width: 90%;
+    margin: 40px auto;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(var(--color-blue-rgb), 0.3);
+    scroll-margin-top: 90px;
+}
+
+#contato h2 {
+    color: var(--color-yellow);
+}
+
+#contato p {
+    color: var(--color-text-light);
+}
+
+/* 8.1 Layout de duas colunas (botões + mapa) */
+.contato-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.botoes-acao {
+    display: flex;
+    flex-direction: column; /* Botões um abaixo do outro na coluna deles */
+    gap: 15px;
+    flex: 1;
+    max-width: 400px;
+    width: 100%;
+}
+
+.mapa-localizacao {
+    flex: 1;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* 8.2 Botões de ação (WhatsApp, telefone e mapa) */
+.botoes-acao a {
+    text-decoration: none;
+    padding: 16px 24px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-whatsapp {
+    background-color: var(--color-whatsapp);
+    color: var(--color-text-white);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    animation: pulsarBotao 3.5s infinite;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--color-whatsapp-dark);
+}
+
+.btn-telefone {
+    background-color: var(--color-text-white);
+    color: var(--color-blue);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.btn-telefone:hover {
+    background-color: var(--color-text-light);
+    transform: translateY(-2px);
+}
+
+.btn-maps {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-white);
+    border: 2px solid var(--color-text-white);
+}
+
+.btn-maps:hover {
+    background-color: var(--color-text-white);
+    color: var(--color-blue);
+    transform: translateY(-2px);
+}
+
+/* 8.3 Animação de pulsação (reaproveitada no botão flutuante, seção 10) */
+@keyframes pulsarBotao {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+}
+
+/* 8.4 Responsividade */
+@media (max-width: 768px) {
+    .contato-container {
+        flex-direction: column; /* Botões em cima, mapa embaixo no mobile */
+        gap: 30px;
+    }
+    .botoes-acao,
+    .mapa-localizacao {
+        max-width: 100%;
+    }
+    .botoes-acao a {
+        width: 100%; /* Facilita o toque no celular */
+    }
+}
+
+
+/* ==========================================================================
+   9. RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: var(--color-blue);
+    color: var(--color-text-white);
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.95rem;
+    border-top: 4px solid var(--color-yellow); /* Linha amarela dividindo o footer */
+}
+
+footer address {
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-yellow);
+}
+
+footer p {
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+
+/* ==========================================================================
+   10. BOTÃO FLUTUANTE DO WHATSAPP
+   ========================================================================== */
+.whatsapp-flutuante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    background-color: var(--color-whatsapp-floating);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(60, 102, 6, 0.5);
+    animation: pulsarBotao 3.5s infinite; /* Reaproveita a animação da seção 8.3 */
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-flutuante:hover {
+    transform: scale(1.1);
+}
