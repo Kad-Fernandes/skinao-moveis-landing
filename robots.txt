@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skinaomoveis.com.br/sitemap.xml
