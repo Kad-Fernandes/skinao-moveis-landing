@@ -1,6 +1,6 @@
 # Skinão Móveis — Website & Landing Page Institucional
 
-> Landing page desenvolvida para uma empresa realde móveis e eletrodomésticos com foco em presença digital, SEO local e geração de contatos via WhatsApp.
+> Landing page desenvolvida para uma empresa real de móveis e eletrodomésticos com foco em presença digital, SEO local e geração de contatos via WhatsApp.
 
 🔗 **Acesse o projeto ao vivo:** [skinaomoveis.com.br](https://skinaomoveis.com.br)
 
@@ -88,7 +88,7 @@ Desenvolvido por **Kadmiel Fernandes**
 *Estudante de Desenvolvimento Full Stack
 Apaixonado por criar soluções web, aprender novas tecnologias e transformar ideias em projetos reais.*
 
-- 💼 **LinkedIn:** [Seu Perfil do LinkedIn Aqui](https://www.linkedin.com)
+- 💼 **LinkedIn:** [https://www.linkedin.com/in/kadmiel-fernandes-a5704a251?utm_source=share_via&utm_content=profile&utm_medium=member_ios](https://www.linkedin.com/in/kadmiel-fernandes-a5704a251?utm_source=share_via&utm_content=profile&utm_medium=member_ios)
 - 🌐 **Website:** [skinaomoveis.com.br](https://skinaomoveis.com.br)
 
 ---
