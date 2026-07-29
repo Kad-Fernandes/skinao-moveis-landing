@@ -74,12 +74,8 @@ function configurarFormularioOrcamento() {
 
 
 /* ==========================================================================
-   3. EFEITO LEQUE NOS AMBIENTES
+   3. EFEITO LEQUE NOS AMBIENTES (COM ROTAÇÃO AUTOMÁTICA)
    ========================================================================== */
-// 3.1 Clique nas fotos (desktop: clica na foto de trás para trazê-la à
-//     frente / mobile: o clique alterna direto, já que o clip-path some)
-// 3.1 Clique nas fotos (desktop: clica na foto "next" que está espiando
-//     atrás pra trazê-la à frente / mobile: qualquer clique já avança)
 function configurarPeekingAmbientes() {
     const cards = document.querySelectorAll('.ambiente-premium');
 
@@ -88,8 +84,27 @@ function configurarPeekingAmbientes() {
         if (slides.length < 2) return;
 
         let indiceAtual = 0;
+        let timerCard = null;
+
         aplicarPapeis(slides, indiceAtual);
 
+        // 3.1 Função para avançar o slide e reiniciar o temporizador
+        function proximoSlide() {
+            indiceAtual = (indiceAtual + 1) % slides.length;
+            aplicarPapeis(slides, indiceAtual);
+        }
+
+        function iniciarTimer() {
+            // Limpa qualquer timer ativo para evitar múltiplos loops rodando ao mesmo tempo
+            if (timerCard) clearInterval(timerCard);
+            // Troca a foto do card a cada 6 segundos (6000ms)
+            timerCard = setInterval(proximoSlide, 6000);
+        }
+
+        // 3.2 Inicia a rotação automática
+        iniciarTimer();
+
+        // 3.3 Clique manual no leque
         slides.forEach((slide) => {
             slide.addEventListener('click', function (e) {
                 e.stopPropagation();
@@ -97,14 +112,15 @@ function configurarPeekingAmbientes() {
                 const isMobile = window.innerWidth <= 768;
                 if (!isMobile && !slide.classList.contains('next')) return;
 
-                indiceAtual = (indiceAtual + 1) % slides.length;
-                aplicarPapeis(slides, indiceAtual);
+                // Avança o slide e reinicia o tempo de 6s para não trocar logo em seguida
+                proximoSlide();
+                iniciarTimer();
             });
         });
     });
 }
 
-// 3.2 Marca qual foto é ".active" (a vez) e qual é ".next" (a seguinte)
+// 3.4 Marca qual foto é ".active" (a vez) e qual é ".next" (a seguinte)
 function aplicarPapeis(slides, indiceAtual) {
     const indiceProximo = (indiceAtual + 1) % slides.length;
 
