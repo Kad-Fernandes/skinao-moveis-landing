@@ -59,7 +59,7 @@ function configurarFormularioOrcamento() {
         let texto = `Olá! Gostaria de um orçamento.\n\n`;
         texto += `*Nome:* ${nome}\n`;
         texto += `*Contato:* ${telefone}\n`;
-        texto += `*Ambiente de interesse:* ${interesse}\n`;
+        texto += `*Interesse:* ${interesse}\n`;
         if (mensagem.trim() !== '') {
             texto += `*Mensagem:* ${mensagem}\n`;
         }
