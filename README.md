@@ -6,7 +6,7 @@
 
 ---
 
-## Preview
+## Project
 
 ![Preview do projeto](assets/preview.png)
 
@@ -18,7 +18,7 @@ Este projeto foi idealizado e desenvolvido do zero para conectar a **Skinão Mó
 
 ---
 
-##  O Desafio 
+## O Desafio
 
 A empresa não possuía uma presença digital otimizada para mecanismos de busca. O objetivo foi desenvolver uma landing page moderna, responsiva e preparada para o SEO local, facilitando o contato dos clientes e aumentando a visibilidade da loja na região.
 
@@ -27,17 +27,26 @@ A empresa não possuía uma presença digital otimizada para mecanismos de busca
 ## Tecnologias e Ferramentas Utilizadas
 
 ### **Front-End & Interface**
+
 🌐 **HTML5:** Estruturação semântica e acessível.
 🎨 **CSS3:** Estilização moderna, responsiva (Mobile First) e otimizada.
 ⚙️ **JavaScript:** Interatividade e dinamismo na interface.
 
+### **Back-End & Banco de Dados**
+
+⚡ **Supabase:** Backend-as-a-Service para persistência de dados.
+🐘 **PostgreSQL:** Banco de dados relacional para armazenamento dos leads e solicitações de orçamento.
+🔐 **RLS (Row Level Security):** Políticas de segurança para acesso granular às tabelas do banco.
+
 ### **Infraestrutura & Deploy**
+
 🚀 **Netlify:** Hospedagem e deploy contínuo integrado ao repositório.
 📡 **DNS & Domínio Próprio:** Configuração de apontamentos de domínio personalizado (`.com.br`).
 🐙 **Git & GitHub:** Versionamento de código e controle de alterações.
 
 ### **SEO Técnico & Analytics (Otimização)**
-📍 **Schema.org (JSON-LD):** Marcação de dados estruturados para *Local Business / Furniture Store*.
+
+📍 **Schema.org (JSON-LD):** Marcação de dados estruturados para _Local Business / Furniture Store_.
 🔎 **Google Search Console:** Validação de indexação, envio de `sitemap.xml` e `robots.txt`.
 📊 **Google Analytics 4 (GA4):** Monitoramento de tráfego, origem de acessos e métricas em tempo real.
 
@@ -56,6 +65,7 @@ A empresa não possuía uma presença digital otimizada para mecanismos de busca
 ✅ Robots
 ✅ Analytics
 ✅ Schema
+✅ Captura e persistência de Leads no Supabase (PostgreSQL)
 
 ---
 
@@ -65,12 +75,14 @@ A empresa não possuía uma presença digital otimizada para mecanismos de busca
 - ⚡ **Performance:** Carregamento rápido e código limpo.
 - 📍 **SEO Local Otimizado:** Marcações específicas para relevância em buscas regionais.
 - 🟢 **Rastreamento em Tempo Real:** Tag `gtag.js` integrada para análise de conversão.
+- 🗄️ **Captura Inteligente de Leads:** As solicitações de orçamento são enviadas simultaneamente para o WhatsApp do vendedor e salvas em banco de dados relacional para gestão de contatos.
 
 ---
 
 ## O que aprendi
 
 Durante esse projeto aprendi na prática:
+
 - Estruturação semântica em HTML, CSS e JS
 - SEO Local
 - Schema.org
@@ -79,14 +91,17 @@ Durante esse projeto aprendi na prática:
 - Configuração do Google Analytics
 - Google Search Console
 - Organização de projetos Front-End
+- Integração de Front-end com Back-End como Serviço (Supabase)
+- Manipulação de banco de dados PostgreSQL e APIs RESTful
+- Configuração de políticas de segurança no banco de dados (RLS - Row Level Security)
 
 ---
 
 ## Autor
 
 Desenvolvido por **Kadmiel Fernandes**  
-*Estudante de Desenvolvimento Full Stack
-Apaixonado por criar soluções web, aprender novas tecnologias e transformar ideias em projetos reais.*
+_Estudante de Desenvolvimento Full Stack
+Apaixonado por criar soluções web, aprender novas tecnologias e transformar ideias em projetos reais._
 
 - 💼 **LinkedIn:** [https://www.linkedin.com/in/kadmiel-fernandes-a5704a251?utm_source=share_via&utm_content=profile&utm_medium=member_ios](https://www.linkedin.com/in/kadmiel-fernandes-a5704a251?utm_source=share_via&utm_content=profile&utm_medium=member_ios)
 - 🌐 **Website:** [skinaomoveis.com.br](https://skinaomoveis.com.br)
@@ -95,8 +110,7 @@ Apaixonado por criar soluções web, aprender novas tecnologias e transformar id
 
 ## Próximos passos
 
-- Melhorar acessibilidade
-- Otimizar imagens
-- Melhorar pontuação Lighthouse
-- Implementar CMS para gerenciamento dos produtos
-- Evoluir futuramente para um e-commerce
+- [x] Implementar banco de dados para salvamento e gestão dos leads
+- [ ] Criar um painel administrativo
+- [ ] Otimizar imagens e pontuação no Google Lighthouse
+- [ ] Evoluir futuramente para um e-commerce
