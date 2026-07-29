@@ -1,4 +1,12 @@
 /* ==========================================================================
+   0. CONECTIVIDADE (SUPABASE)
+   ========================================================================== */
+const SUPABASE_URL = 'https://shvivhfpfhcrurtfeowd.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNodml2aGZwZmhjcnVydGZlb3dkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUzNTQxMTcsImV4cCI6MjEwMDkzMDExN30.vAB1FDSrFHb-hDNBpGp1RNmslOR23QAt-ToAU0p-SAQ';
+
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+/* ==========================================================================
    1. SLIDESHOW AUTOMÁTICO (Hero)
    ========================================================================== */
 // Troca a foto sozinha a cada 8s em qualquer ".slider-container" da página.
@@ -47,28 +55,44 @@ function configurarFormularioOrcamento() {
         }
     });
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
+        // Pega os dados digitados pelo cliente
         const nome = document.getElementById('nome').value;
-        const telefone = inputTelefone.value;
-        const selectInteresse = document.getElementById('interesse');
-        const interesse = selectInteresse.options[selectInteresse.selectedIndex].text;
+        const telefone = document.getElementById('telefone').value;
+        const interesse = document.getElementById('interesse').value;
         const mensagem = document.getElementById('mensagem').value;
 
-        let texto = `Olá! Gostaria de um orçamento.\n\n`;
-        texto += `*Nome:* ${nome}\n`;
-        texto += `*Contato:* ${telefone}\n`;
-        texto += `*Interesse:* ${interesse}\n`;
-        if (mensagem.trim() !== '') {
-            texto += `*Mensagem:* ${mensagem}\n`;
+        try {
+            // 1. Salva o lead no Supabase
+            const { error } = await supabaseClient
+                .from('solicitacoes')
+                .insert([
+                    { 
+                        nome: nome, 
+                        telefone: telefone, 
+                        interesse: interesse, 
+                        mensagem: mensagem 
+                    }
+                ]);
+
+            if (error) {
+                console.error('Erro ao salvar no banco:', error);
+            } else {
+                console.log('Lead salvo com sucesso no Supabase!');
+            }
+        } catch (err) {
+            console.error('Erro de conexão:', err);
         }
 
-        const textoCodificado = encodeURIComponent(texto);
-        const numeroWhats = '556732682280';
-        const urlWhats = `https://api.whatsapp.com/send?phone=${numeroWhats}&text=${textoCodificado}`;
+        // 2. Monta a mensagem e redireciona pro WhatsApp normalmente
+        const textoWhatsapp = `Olá! Meu nome é *${nome}*.\n` +
+                            `Interesse: *${interesse}*\n` +
+                            `Mensagem: ${mensagem}`;
 
-        window.open(urlWhats, '_blank');
+        const url = `https://wa.me/556732682280?text=${encodeURIComponent(textoWhatsapp)}`;
+        window.open(url, '_blank');
     });
 }
 
@@ -150,5 +174,4 @@ document.addEventListener('DOMContentLoaded', () => {
     iniciarTodosOsSliders();
     configurarFormularioOrcamento();
     configurarPeekingAmbientes();
-    configurarPeekingMobile();
 });
