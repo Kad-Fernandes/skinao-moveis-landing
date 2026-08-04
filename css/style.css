@@ -1,7 +1,6 @@
 /* ==========================================================================
-   0. BASE GLOBAL (Fontes, Variáveis & Reset)
+   0. BASE GLOBAL (Variáveis & Reset)
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
     --font-primary: 'Poppins', sans-serif;
