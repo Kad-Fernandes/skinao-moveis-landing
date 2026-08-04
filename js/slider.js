@@ -61,7 +61,9 @@ function configurarFormularioOrcamento() {
         // Pega os dados digitados pelo cliente
         const nome = document.getElementById('nome').value;
         const telefone = document.getElementById('telefone').value;
-        const interesse = document.getElementById('interesse').value;
+        const selectInteresse = document.getElementById("interesse");
+        const interesseValue = selectInteresse.value;
+        const interesseTexto = selectInteresse.options[selectInteresse.selectedIndex].text;
         const mensagem = document.getElementById('mensagem').value;
 
         try {
@@ -72,7 +74,7 @@ function configurarFormularioOrcamento() {
                     { 
                         nome: nome, 
                         telefone: telefone, 
-                        interesse: interesse, 
+                        interesse: interesseValue, 
                         mensagem: mensagem 
                     }
                 ]);
@@ -88,11 +90,22 @@ function configurarFormularioOrcamento() {
 
         // 2. Monta a mensagem e redireciona pro WhatsApp normalmente
         const textoWhatsapp = `Olá! Meu nome é *${nome}*.\n` +
-                            `Interesse: *${interesse}*\n` +
+                            `Interesse: *${interesseTexto}*\n` +
                             `Mensagem: ${mensagem}`;
 
         const url = `https://wa.me/556732682280?text=${encodeURIComponent(textoWhatsapp)}`;
         window.open(url, '_blank');
+
+        // 3. Mostra confirmação visual pro cliente
+        const orcamentoContainer = document.querySelector('.orcamento-container');
+        orcamentoContainer.innerHTML = `
+            <div style="text-align: center; padding: 20px;">
+                <h3 style="color: var(--color-blue); margin-bottom: 10px;">Solicitação Enviada!</h3>
+                <p style="color: var(--color-text-gray);">Se o WhatsApp não abriu automaticamente, 
+                    <a href="${url}" target="_blank" style="color: var(--color-blue); font-weight:700;">CLIQUE AQUI!</a>.
+                </p>
+            </div>
+        `;
     });
 }
 

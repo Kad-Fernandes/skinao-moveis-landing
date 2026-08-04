@@ -99,7 +99,7 @@ Desenvolvido por **Kadmiel Fernandes**
 _Estudante de Desenvolvimento Full Stack
 Apaixonado por criar soluções web, aprender novas tecnologias e transformar ideias em projetos reais._
 
-- 💼 **LinkedIn:** [https://www.linkedin.com/in/kadmiel-fernandes-a5704a251?](https://www.linkedin.com/in/kadmiel-fernandes-a5704a251?)
+- 💼 **LinkedIn:** [https://www.linkedin.com/in/kadmiel-fernandes-a5704a251](https://www.linkedin.com/in/kadmiel-fernandes-a5704a251)
 - 🌐 **Website:** [skinaomoveis.com.br](https://skinaomoveis.com.br)
 
 ---
