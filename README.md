@@ -29,7 +29,7 @@ A empresa não possuía uma presença digital otimizada para mecanismos de busca
 ### **Front-End & Interface**
 
 🌐 **HTML5:** Estruturação semântica e acessível.
-🎨 **CSS3:** Estilização moderna, responsiva (Mobile First) e otimizada.
+🎨 **CSS3:** Estilização moderna, responsiva e otimizada para múltiplos dispositivos.
 ⚙️ **JavaScript:** Interatividade e dinamismo na interface.
 
 ### **Back-End & Banco de Dados**
@@ -61,11 +61,7 @@ A empresa não possuía uma presença digital otimizada para mecanismos de busca
 ✅ WhatsApp
 ✅ Google Maps
 ✅ SEO
-✅ Sitemap
-✅ Robots
-✅ Analytics
-✅ Schema
-✅ Captura e persistência de Leads no Supabase (PostgreSQL)
+✅ Captura e persistência de Leads no Supabase
 
 ---
 
@@ -103,7 +99,7 @@ Desenvolvido por **Kadmiel Fernandes**
 _Estudante de Desenvolvimento Full Stack
 Apaixonado por criar soluções web, aprender novas tecnologias e transformar ideias em projetos reais._
 
-- 💼 **LinkedIn:** [https://www.linkedin.com/in/kadmiel-fernandes-a5704a251?utm_source=share_via&utm_content=profile&utm_medium=member_ios](https://www.linkedin.com/in/kadmiel-fernandes-a5704a251?utm_source=share_via&utm_content=profile&utm_medium=member_ios)
+- 💼 **LinkedIn:** [https://www.linkedin.com/in/kadmiel-fernandes-a5704a251?](https://www.linkedin.com/in/kadmiel-fernandes-a5704a251?)
 - 🌐 **Website:** [skinaomoveis.com.br](https://skinaomoveis.com.br)
 
 ---
@@ -114,3 +110,9 @@ Apaixonado por criar soluções web, aprender novas tecnologias e transformar id
 - [ ] Criar um painel administrativo
 - [ ] Otimizar imagens e pontuação no Google Lighthouse
 - [ ] Evoluir futuramente para um e-commerce
+
+---
+
+## Licença
+
+Este projeto é proprietário. Todos os direitos reservados.
