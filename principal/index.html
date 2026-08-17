@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skinão Móveis - Loja de Móveis e Eletrodomésticos em Bodoquena, MS</title>
+    <meta name="description" content="[Escrever uma meta description própria da Home institucional - diferente da da /lp, pra não duplicar]">
+
+    <!-- Favicons: compartilhados com o resto do site, caminho não muda -->
+    <link rel="icon" href="imagens/logos/favicons/favicon.ico" sizes="any">
+    <link rel="icon" href="imagens/logos/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="imagens/logos/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="imagens/logos/favicons/site.webmanifest">
+
+    <link rel="stylesheet" href="css/institucional.css">
+</head>
+<body>
+
+    <!-- ==================== 1. CABEÇALHO (HEADER) ====================
+         Navegação de site multi-página: cada link aponta pra um ARQUIVO
+         .html separado (não mais âncora #, como era na landing page).
+         As páginas ainda não existem - crie-as conforme for avançando
+         pelo plano de trabalho (Sobre, Produtos, Depoimentos, Contato, FAQ). -->
+    <header>
+        <a href="index.html">
+            <img src="imagens/logos/LOGO.png" alt="Logo Skinão Móveis">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ==================== 2. HERO INSTITUCIONAL ====================
+             Diferente do Hero da /lp (que empurrava direto pro orçamento),
+             esse Hero é mais "cartão de visitas": quem é a Skinão, sem
+             pressa de conversão imediata. -->
+        <section id="hero-institucional">
+            <div class="hero-conteudo">
+                <h1>[Título institucional - ex: "Móveis e eletrodomésticos que viram parte da sua história"]</h1>
+                <p>[Subtítulo curto reforçando tradição/confiança/tempo de mercado]</p>
+                <a href="produtos.html" class="btn-hero">Conheça Nossos Produtos</a>
+            </div>
+        </section>
+
+        <!-- ==================== 3. TEASER "SOBRE NÓS" ====================
+             Resumo curto aqui, o texto completo mora em sobre.html.
+             Objetivo: dar um gostinho de credibilidade e convidar a
+             clicar pra saber mais. -->
+        <section id="sobre-teaser">
+            <h2>Quem é a Skinão Móveis</h2>
+            <p>[2-3 frases sobre a história da loja - o texto completo vai ficar em sobre.html depois da apuração com os fundadores]</p>
+            <a href="sobre.html">Conheça nossa história</a>
+        </section>
+
+        <!-- ==================== 4. PRODUTOS EM DESTAQUE ====================
+             Nessa primeira versão, pode ser estático (fotos escolhidas
+             manualmente). Quando a tabela "produtos" do Supabase estiver
+             alimentada, essa seção pode virar dinâmica (puxando os mais
+             recentes ou mais vendidos direto do banco). -->
+        <section id="produtos-destaque">
+            <h2>Nossos Produtos</h2>
+            <p>[Chamada curta convidando a explorar o catálogo completo]</p>
+
+            <div class="produtos-grid">
+                <!-- Repetir este bloco para cada produto em destaque -->
+                <article class="produto-card">
+                    <img src="[CAMINHO/PARA/FOTO-PRODUTO.jpg]" alt="[Nome do produto]">
+                    <h3>[Nome do Produto]</h3>
+                </article>
+            </div>
+
+            <a href="produtos.html">Ver catálogo completo</a>
+        </section>
+
+        <!-- ==================== 5. MARCAS PARCEIRAS ====================
+             Reaproveita a MESMA lógica de carrossel infinito da /lp
+             (marcas-wrapper / marcas-track). No futuro, cada logo aqui
+             vira um link pra produtos.html?marca=nomedamarca -->
+        <section id="marcas">
+            <h2>Marcas que Trabalhamos</h2>
+
+            <div class="marcas-wrapper">
+                <div class="marcas-track">
+                    <!-- Reaproveitar a lista de logos já existente na /lp -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 6. TEASER DEPOIMENTOS ====================
+             Mostra 2-3 depoimentos aqui, o resto fica em depoimentos.html -->
+        <section id="depoimentos-teaser">
+            <h2>O que nossos clientes dizem</h2>
+
+            <div class="depoimentos-grid">
+                <!-- Repetir este bloco para cada depoimento em destaque -->
+                <blockquote class="depoimento-card">
+                    <p>"[Texto do depoimento]"</p>
+                    <cite>[Nome do Cliente]</cite>
+                </blockquote>
+            </div>
+
+            <a href="depoimentos.html">Ver todas as avaliações</a>
+        </section>
+
+        <!-- ==================== 7. CHAMADA PARA AÇÃO FINAL ==================== -->
+        <section id="cta-final">
+            <h2>[Chamada final - ex: "Vem conhecer a loja e viver essa experiência de perto"]</h2>
+            <a href="contato.html" class="btn-cta">Fale Conosco</a>
+        </section>
+
+    </main>
+
+    <!-- ==================== 8. RODAPÉ (FOOTER) ====================
+         Mesmo conteúdo/estrutura da /lp - reaproveitar. -->
+    <footer>
+        <address>
+            Av. Manoel Rodrigues de Oliveira, 600 - BODOQUENA(MS) 79390-000
+        </address>
+        <p>Segunda a Sexta, das 08h às 18h - Sábados, das 08h às 12h</p>
+        <p>&copy; <span id="ano"></span> SKINÃO MÓVEIS. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/556732682280?text=Olá!%20Gostaria%20de%20receber%20um%20atendimento."
+       target="_blank" rel="noopener noreferrer" class="whatsapp-flutuante" aria-label="Falar no WhatsApp">
+       <img src="imagens/icons/zapzap.png" alt="WhatsApp">
+    </a>
+
+    <script src="js/institucional.js"></script>
+</body>
+</html>
