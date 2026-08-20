@@ -3,138 +3,414 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skinão Móveis - Loja de Móveis e Eletrodomésticos em Bodoquena, MS</title>
-    <meta name="description" content="[Escrever uma meta description própria da Home institucional - diferente da da /lp, pra não duplicar]">
 
-    <!-- Favicons: compartilhados com o resto do site, caminho não muda -->
-    <link rel="icon" href="imagens/logos/favicons/favicon.ico" sizes="any">
-    <link rel="icon" href="imagens/logos/favicons/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="imagens/logos/favicons/apple-touch-icon.png">
-    <link rel="manifest" href="imagens/logos/favicons/site.webmanifest">
+    <!-- ── SEO Básico ─────────────────────────────────────────── -->
+    <title>Skinão Móveis | Priorizando o seu lar</title>
+    <meta name="description" content="Tradição, qualidade e as melhores condições em móveis, eletrodomésticos e eletrônicos em Bodoquena e região. Visite nossa loja ou fale pelo WhatsApp.">
+    <meta name="keywords" content="móveis Bodoquena, eletrodomésticos Bodoquena, loja de móveis MS, Skinão Móveis, móveis Mato Grosso do Sul, eletrônicos Bodoquena, colchões, sala de estar, quarto planejado">
+    <meta name="norobots" content="noindex, nofollow">
+    <meta name="theme-color" content="#1a2b5e">
 
+    <!-- ── Google Search Console ──────────────────────────────── -->
+    <meta name="google-site-verification" content="zLUxI63B53K227_M6mjFbfmGLEFGel3RpwIQPoHMVcg">
+
+    <!-- ── Open Graph (Facebook, WhatsApp, LinkedIn) ──────────── -->
+    <meta property="og:type"        content="website">
+    <meta property="og:locale"      content="pt_BR">
+    <meta property="og:site_name"   content="Skinão Móveis">
+    <meta property="og:title"       content="Skinão Móveis | Priorizando o seu lar">
+    <meta property="og:description" content="Móveis, eletrodomésticos e eletrônicos para transformar cada canto da sua casa. Atendimento próximo e as melhores condições em Bodoquena e região.">
+    <meta property="og:url"         content="https://skinaomoveis.com.br/principal/">
+    <meta property="og:image"       content="https://skinaomoveis.com.br/imagens/logos/LOGO.png">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"   content="Logo Skinão Móveis">
+
+    <!-- ── Twitter / X Card ───────────────────────────────────── -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="Skinão Móveis | Priorizando o seu lar">
+    <meta name="twitter:description" content="Móveis, eletrodomésticos e eletrônicos para transformar cada canto da sua casa.">
+    <meta name="twitter:image"       content="https://skinaomoveis.com.br/imagens/logos/LOGO.png">
+
+    <!-- ── Favicons ───────────────────────────────────────────── -->
+    <link rel="icon" href="../imagens/logos/favicons/favicon.ico" sizes="any">
+    <link rel="icon" href="../imagens/logos/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../imagens/logos/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="../imagens/logos/favicons/site.webmanifest">
+
+    <!-- ── Google Fonts (preconnect + import) ─────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+    <!-- ── CSS Unificado ──────────────────────────────────────── -->
     <link rel="stylesheet" href="css/institucional.css">
+
+    <!-- ── Google Analytics GA4 ───────────────────────────────── -->
+    <!--
+        O GA4 só é inicializado APÓS o usuário aceitar os cookies.
+        O banner de cookies (no final do body) controla isso via JS.
+        O script abaixo é carregado mas fica em modo 'denied' por padrão.
+    -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            analytics_storage: 'denied',
+            ad_storage:        'denied',
+            wait_for_update:   500
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GJH52SMKMX"></script>
+    <script>
+        gtag('js', new Date());
+        gtag('config', 'G-GJH52SMKMX', { send_page_view: true });
+    </script>
+
+    <!-- ── Schema.org — FurnitureStore (SEO local) ────────────── -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FurnitureStore",
+        "name": "Skinão Móveis",
+        "image": "https://skinaomoveis.com.br/imagens/logos/LOGO.png",
+        "url": "https://skinaomoveis.com.br/principal/",
+        "telephone": "+556732682280",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Manoel Rodrigues de Oliveira, 600",
+            "addressLocality": "Bodoquena",
+            "addressRegion": "MS",
+            "postalCode": "79390-000",
+            "addressCountry": "BR"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday"],
+                "opens": "08:00",
+                "closes": "12:00"
+            }
+        ],
+        "sameAs": [
+            "https://skinaomoveis.com.br"
+        ]
+    }
+    </script>
 </head>
 <body>
 
-    <!-- ==================== 1. CABEÇALHO (HEADER) ====================
-         Navegação de site multi-página: cada link aponta pra um ARQUIVO
-         .html separado (não mais âncora #, como era na landing page).
-         As páginas ainda não existem - crie-as conforme for avançando
-         pelo plano de trabalho (Sobre, Produtos, Depoimentos, Contato, FAQ). -->
-    <header>
-        <a href="index.html">
-            <img src="imagens/logos/LOGO.png" alt="Logo Skinão Móveis">
-        </a>
-
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="produtos.html">Produtos</a></li>
-                <li><a href="depoimentos.html">Depoimentos</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
+    <!-- ==================== CABEÇALHO ==================== -->
+    <header class="site-header" id="topo">
+        <div class="container header-inner">
+            <a class="brand" href="index.html" aria-label="Skinão Móveis - início">
+                <img src="../imagens/logos/LOGO.png" alt="Skinão Móveis" width="145" height="auto">
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </button>
+            <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+                <div class="nav-brand">
+                    <img src="../imagens/logos/LOGO.png" alt="Skinão Móveis" width="130" height="auto">
+                </div>
+                <a class="active" href="index.html">Início</a>
+                
+                <a href="sobre.html" aria-label="Sobre Nós — em breve">Sobre Nós</a>
+                
+                <a href="produtos.html" aria-label="Produtos — em breve">Produtos</a>
+                
+                <a href="depoimentos.html" aria-label="Depoimentos — em breve">Depoimentos</a>
+                
+                <a href="faq.html" aria-label="FAQ — em breve">FAQ</a>
+                
+                <a href="contato.html" class="nav-cta" aria-label="Fale conosco — em breve">Fale conosco</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-
-        <!-- ==================== 2. HERO INSTITUCIONAL ====================
-             Diferente do Hero da /lp (que empurrava direto pro orçamento),
-             esse Hero é mais "cartão de visitas": quem é a Skinão, sem
-             pressa de conversão imediata. -->
-        <section id="hero-institucional">
-            <div class="hero-conteudo">
-                <h1>[Título institucional - ex: "Móveis e eletrodomésticos que viram parte da sua história"]</h1>
-                <p>[Subtítulo curto reforçando tradição/confiança/tempo de mercado]</p>
-                <a href="produtos.html" class="btn-hero">Conheça Nossos Produtos</a>
+        <!-- ==================== HERO BANNER (CARROSSEL) ==================== -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-media" aria-hidden="true" id="hero-slideshow">
+                <img src="../imagens/Carrocel/carrocel1.jpg" alt="Ambiente decorado Skinão Móveis" class="hero-slide active" loading="eager">
+                <img src="../imagens/Carrocel/carrocel2.jpg" alt="Sala de estar Skinão Móveis" class="hero-slide" loading="lazy">
+                <img src="../imagens/Carrocel/carrocel3.jpg" alt="Quarto Skinão Móveis" class="hero-slide" loading="lazy">
             </div>
-        </section>
-
-        <!-- ==================== 3. TEASER "SOBRE NÓS" ====================
-             Resumo curto aqui, o texto completo mora em sobre.html.
-             Objetivo: dar um gostinho de credibilidade e convidar a
-             clicar pra saber mais. -->
-        <section id="sobre-teaser">
-            <h2>Quem é a Skinão Móveis</h2>
-            <p>[2-3 frases sobre a história da loja - o texto completo vai ficar em sobre.html depois da apuração com os fundadores]</p>
-            <a href="sobre.html">Conheça nossa história</a>
-        </section>
-
-        <!-- ==================== 4. PRODUTOS EM DESTAQUE ====================
-             Nessa primeira versão, pode ser estático (fotos escolhidas
-             manualmente). Quando a tabela "produtos" do Supabase estiver
-             alimentada, essa seção pode virar dinâmica (puxando os mais
-             recentes ou mais vendidos direto do banco). -->
-        <section id="produtos-destaque">
-            <h2>Nossos Produtos</h2>
-            <p>[Chamada curta convidando a explorar o catálogo completo]</p>
-
-            <div class="produtos-grid">
-                <!-- Repetir este bloco para cada produto em destaque -->
-                <article class="produto-card">
-                    <img src="[CAMINHO/PARA/FOTO-PRODUTO.jpg]" alt="[Nome do produto]">
-                    <h3>[Nome do Produto]</h3>
-                </article>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <span class="eyebrow">Bodoquena e região</span>
+                <h1 id="hero-title">A casa dos seus sonhos começa aqui.</h1>
+                <p>Móveis, eletrodomésticos e eletrônicos para transformar cada canto da sua casa em um lugar ainda mais seu.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary has-icon" href="produtos.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arr-2"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                        <span class="text">Conheça nossos produtos</span>
+                        <span class="circle"></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arr-1"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                    </a>
+                    <a class="button button-ghost" href="contato.html">Fale com a gente</a>
+                </div>
+                <div class="hero-trust" aria-label="Diferenciais">
+                    <div><strong>Variedade</strong><span>para todos os ambientes</span></div>
+                    <div><strong>Atendimento</strong><span>próximo e familiar</span></div>
+                    <div><strong>Condições</strong><span>para realizar seus planos</span></div>
+                    <div><strong>Entrega</strong><span>rápida e garantida</span></div>
+                </div>
             </div>
-
-            <a href="produtos.html">Ver catálogo completo</a>
+            <a class="scroll-cue" href="#sobre-teaser" aria-label="Rolar para conhecer a Skinão">↓</a>
         </section>
 
-        <!-- ==================== 5. MARCAS PARCEIRAS ====================
-             Reaproveita a MESMA lógica de carrossel infinito da /lp
-             (marcas-wrapper / marcas-track). No futuro, cada logo aqui
-             vira um link pra produtos.html?marca=nomedamarca -->
-        <section id="marcas">
-            <h2>Marcas que Trabalhamos</h2>
-
-            <div class="marcas-wrapper">
-                <div class="marcas-track">
-                    <!-- Reaproveitar a lista de logos já existente na /lp -->
+        <!-- ==================== SOBRE A LOJA ==================== -->
+        <section class="intro section" id="sobre-teaser">
+            <div class="container intro-grid">
+                <div class="intro-content reveal">
+                    <div class="section-heading">
+                        <span class="eyebrow eyebrow-blue">Quem é a Skinão?</span>
+                        <h2>Mais do que móveis. <em>Um lugar para começar novos capítulos.</em></h2>
+                    </div>
+                    <div class="intro-copy">
+                        <p class="lead">Há anos fazendo parte da vida das famílias de Bodoquena, o Skinão Móveis combina variedade, preços acessíveis e um atendimento próximo.</p>
+                        <p>Nosso compromisso é entregar conforto e qualidade para cada ambiente da sua casa, garantindo uma experiência simples, humana e do jeito que você merece.</p>
+                        <a class="text-link diag" href="sobre.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arr-2"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                            <span class="text">Conheça nossa história</span>
+                            <span class="circle"></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arr-1"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="intro-image reveal">
+                    <!-- TODO: Substituir o src por uma foto real da equipe ou fachada da loja -->
+                    <div class="store-photo-placeholder">
+                        <span>FOTO DA EQUIPE / LOJA</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 6. TEASER DEPOIMENTOS ====================
-             Mostra 2-3 depoimentos aqui, o resto fica em depoimentos.html -->
-        <section id="depoimentos-teaser">
-            <h2>O que nossos clientes dizem</h2>
+        <!-- ==================== BENEFÍCIOS ==================== -->
+        <section class="benefits" aria-label="Nossos diferenciais">
+            <div class="container benefits-grid">
 
-            <div class="depoimentos-grid">
-                <!-- Repetir este bloco para cada depoimento em destaque -->
-                <blockquote class="depoimento-card">
-                    <p>"[Texto do depoimento]"</p>
-                    <cite>[Nome do Cliente]</cite>
-                </blockquote>
+                <!-- Ícone: Loja Física -->
+                <div class="benefit reveal">
+                    <svg class="benefit-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    <div><strong>Loja física</strong><span>Venha nos visitar</span></div>
+                </div>
+
+                <!-- Ícone: Entrega Rápida -->
+                <div class="benefit reveal">
+                    <svg class="benefit-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="3" width="15" height="13" rx="1"/>
+                        <path d="M16 8h4l3 3v5h-7V8z"/>
+                        <circle cx="5.5" cy="18.5" r="2.5"/>
+                        <circle cx="18.5" cy="18.5" r="2.5"/>
+                    </svg>
+                    <div><strong>Entrega rápida</strong><span>Mais comodidade para você</span></div>
+                </div>
+
+                <!-- Ícone: Facilidade de pagamento -->
+                <div class="benefit reveal">
+                    <svg class="benefit-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                    <div><strong>Facilidade</strong><span>As melhores condições</span></div>
+                </div>
+
+                <!-- Ícone: Atendimento -->
+                <div class="benefit reveal">
+                    <svg class="benefit-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                    <div><strong>Atendimento</strong><span>De perto, como deve ser</span></div>
+                </div>
+
             </div>
-
-            <a href="depoimentos.html">Ver todas as avaliações</a>
         </section>
 
-        <!-- ==================== 7. CHAMADA PARA AÇÃO FINAL ==================== -->
-        <section id="cta-final">
-            <h2>[Chamada final - ex: "Vem conhecer a loja e viver essa experiência de perto"]</h2>
-            <a href="contato.html" class="btn-cta">Fale Conosco</a>
+        <!-- ==================== CATÁLOGO DE AMBIENTES ==================== -->
+        <section class="products section" id="produtos-destaque">
+            <div class="container">
+                <div class="section-top reveal">
+                    <div class="section-heading">
+                        <span class="eyebrow eyebrow-blue">Escolha seu próximo ambiente</span>
+                        <h2>Tem espaço para tudo<br><em>que você imagina.</em></h2>
+                    </div>
+                    <p>Uma seleção para deixar sua casa mais confortável, bonita e com a sua cara.</p>
+                </div>
+                <div class="products-grid">
+                    <a class="product-card product-card-large reveal" href="produtos.html">
+                        <img src="../imagens/ambientes/sala1.jpg" alt="Sala de estar" loading="lazy" width="760" height="490">
+                        <div class="card-shade"></div>
+                        <div class="product-card-content"><span>01</span><h3>Sala de estar</h3><b>Explorar ambiente →</b></div>
+                    </a>
+                    <a class="product-card reveal" href="produtos.html">
+                        <img src="../imagens/ambientes/quarto1.jpg" alt="Quarto e colchões" loading="lazy" width="530" height="237">
+                        <div class="card-shade"></div>
+                        <div class="product-card-content"><span>02</span><h3>Quarto</h3><b>Explorar ambiente →</b></div>
+                    </a>
+                    <a class="product-card reveal" href="produtos.html">
+                        <img src="../imagens/ambientes/cozinha1.jpg" alt="Cozinha e armários" loading="lazy" width="530" height="237">
+                        <div class="card-shade"></div>
+                        <div class="product-card-content"><span>03</span><h3>Cozinha</h3><b>Explorar ambiente →</b></div>
+                    </a>
+                </div>
+                <div class="center-link reveal">
+                    <a class="button button-dark has-icon" href="produtos.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arr-2"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                        <span class="text">Ver catálogo completo</span>
+                        <span class="circle"></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arr-1"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                    </a>
+                </div>
+            </div>
         </section>
 
+        <!-- ==================== MARCAS PARCEIRAS ==================== -->
+        <section class="brands section-sm" id="marcas">
+            <div class="container">
+                <div class="brands-header reveal"><span class="eyebrow eyebrow-blue">Parceiros</span><h2>Marcas que fazem parte da nossa loja.</h2></div>
+                <div class="brands-track" aria-label="Marcas parceiras">
+                    <div class="brand-item"><img src="../imagens/logos/parceiros/samsung.png" alt="Samsung" loading="lazy"></div>
+                    <div class="brand-item"><img src="../imagens/logos/parceiros/philco.png" alt="Philco" loading="lazy"></div>
+                    <div class="brand-item"><img src="../imagens/logos/parceiros/mondial.png" alt="Mondial" loading="lazy"></div>
+                    <div class="brand-item"><img src="../imagens/logos/parceiros/henn.png" alt="Henn" loading="lazy"></div>
+                    <div class="brand-item"><img src="../imagens/logos/parceiros/jbl.png" alt="JBL" loading="lazy"></div>
+                    <div class="brand-item"><img src="../imagens/logos/parceiros/apple.png" alt="Apple" loading="lazy"></div>
+                    <div class="brand-item"><img src="../imagens/logos/parceiros/elgin.png" alt="Elgin" loading="lazy"></div>
+                    <div class="brand-item"><img src="../imagens/logos/parceiros/cavazotto.png" alt="Cavazotto" loading="lazy"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DEPOIMENTOS ==================== -->
+        <section class="testimonial section" id="depoimentos-teaser">
+            <div class="container testimonial-grid">
+                <div class="testimonial-label reveal"><span class="eyebrow">Quem compra, recomenda</span><div class="quote-mark">"</div></div>
+                <div class="testimonial-main reveal">
+                    <!--
+                        TODO: Substituir pelo depoimento real de um cliente.
+                        Estrutura: blockquote = texto da avaliação | cite = nome completo do cliente
+                        Exemplo: <blockquote>"Ótimo atendimento!"</blockquote> <cite>Maria Silva — Bodoquena/MS</cite>
+                    -->
+                    <blockquote>"Atendimento nota 10 e os melhores preços de Bodoquena. Entregaram meus móveis super rápido!"</blockquote>
+                    <cite>Cliente Skinão Móveis — Bodoquena/MS</cite>
+                    <a class="text-link diag" href="depoimentos.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arr-2"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                        <span class="text">Ver todas as avaliações</span>
+                        <span class="circle"></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arr-1"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CTA FINAL ==================== -->
+        <section class="cta section" id="cta-final">
+            <div class="cta-pattern" aria-hidden="true"></div>
+            <div class="container cta-inner reveal">
+                <span class="eyebrow">Estamos esperando por você</span>
+                <h2>Seu próximo ambiente<br><em>pode começar hoje.</em></h2>
+                <p>Venha tomar um café conosco, conhecer nossa loja e encontrar o que falta para deixar sua casa do seu jeito.</p>
+                <a class="button button-yellow has-icon diag" href="https://wa.me/556732682280?text=Olá!%20Gostaria%20de%20receber%20um%20atendimento." target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arr-2"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                    <span class="text">Fale conosco no WhatsApp</span>
+                    <span class="circle"></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arr-1"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                </a>
+            </div>
+        </section>
     </main>
 
-    <!-- ==================== 8. RODAPÉ (FOOTER) ====================
-         Mesmo conteúdo/estrutura da /lp - reaproveitar. -->
-    <footer>
-        <address>
-            Av. Manoel Rodrigues de Oliveira, 600 - BODOQUENA(MS) 79390-000
-        </address>
-        <p>Segunda a Sexta, das 08h às 18h - Sábados, das 08h às 12h</p>
-        <p>&copy; <span id="ano"></span> SKINÃO MÓVEIS. Todos os direitos reservados.</p>
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer class="site-footer">
+        <div class="container footer-top">
+            <div class="footer-brand">
+                <img src="../imagens/logos/LOGO.png" alt="Skinão Móveis" width="145" loading="lazy">
+                <p>Tradição, proximidade e tudo para deixar sua casa ainda mais sua.</p>
+                    <div class="hero-social">
+                        <span class="hero-social-label">Siga a Skinão</span>
+                        <ul class="social-icons">
+                            <li class="social-icon">
+                                <a class="social-link facebook" href="https://facebook.com/skinaomoveis" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                    <span class="tooltip">Facebook</span>
+                                    <svg viewBox="0 0 320 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
+                                </a>
+                            </li>
+                            <li class="social-icon">
+                                <a class="social-link instagram" href="https://instagram.com/skinaomoveis" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                    <span class="tooltip">Instagram</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path></svg>
+                                </a>
+                            </li>
+                            <li class="social-icon">
+                                <a class="social-link whatsapp" href="https://wa.me/556732682280" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                    <span class="tooltip">WhatsApp</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c-.001 1.399.365 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.174-1.1-1.372-.114-.198-.011-.304.088-.403.087-.087.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.127 3.383 2.981.47.205.84.326 1.129.418.475.152.904.13 1.246.08.38-.058 1.171-.48 1.336-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path></svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="depoimentos.html">Depoimentos</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-column">
+                <h3>Fale com a gente</h3>
+                <a href="contato.html">Contato</a>
+                <a href="https://wa.me/556732682280?text=Olá!%20Gostaria%20de%20receber%20um%20atendimento." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <address>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Av.+Manoel+Rodrigues+de+Oliveira,+600+Bodoquena+MS" target="_blank" rel="noopener noreferrer" aria-label="Ver localização no Google Maps">
+                        Av. Manoel Rodrigues de Oliveira, 600<br>Bodoquena - MS, 79390-000
+                    </a>
+                </address>
+            </div>
+            <div class="footer-column">
+                <h3>Horário</h3>
+                <p>Segunda a sexta<br><strong>08h às 18h</strong></p>
+                <p>Sábado<br><strong>08h às 12h</strong></p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>© <span id="ano"></span> Skinão Móveis. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
-    <a href="https://wa.me/556732682280?text=Olá!%20Gostaria%20de%20receber%20um%20atendimento."
-       target="_blank" rel="noopener noreferrer" class="whatsapp-flutuante" aria-label="Falar no WhatsApp">
-       <img src="imagens/icons/zapzap.png" alt="WhatsApp">
-    </a>
+    <!-- Botões Flutuantes -->
+    <div class="floating-actions">
+        <a href="#topo" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </a>
+        <a href="https://wa.me/556732682280?text=Olá!%20Gostaria%20de%20receber%20um%20atendimento." target="_blank" rel="noopener noreferrer" class="whatsapp-flutuante" aria-label="Falar no WhatsApp">
+            <img src="../imagens/icons/zapzap.png" alt="WhatsApp" width="50" height="50">
+        </a>
+    </div>
 
+    <!-- Banner de Cookies -->
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-hidden="true">
+        <div class="cookie-content">
+            <p>Usamos cookies para melhorar sua experiência e analisar nosso tráfego. Ao continuar navegando, você concorda com a nossa política.</p>
+            <button id="accept-cookies" class="button button-yellow">Entendi</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Unificado -->
     <script src="js/institucional.js"></script>
 </body>
 </html>
