@@ -163,12 +163,10 @@ h2 em {
   transition: 0.25s;
 }
 
-.main-nav > a:hover,
 .main-nav > a.active {
   background: rgba(255, 255, 255, 0.12);
 }
 
-.site-header.scrolled .main-nav > a:hover,
 .site-header.scrolled .main-nav > a.active {
   background: var(--paper);
 }
@@ -177,10 +175,6 @@ h2 em {
   background: var(--yellow);
   color: var(--navy);
   padding-inline: 20px;
-}
-
-.main-nav .nav-cta:hover {
-  background: #ffe15c;
 }
 
 .menu-toggle {
@@ -311,9 +305,6 @@ h2 em {
     box-shadow 0.25s;
 }
 
-.button:hover {
-  transform: translateY(-3px);
-}
 .button:active {
   transform: translateY(-1px) scale(0.98);
 }
@@ -325,10 +316,6 @@ h2 em {
   border: 1px solid rgba(255, 255, 255, 0.35);
   color: white;
   background: rgba(255, 255, 255, 0.04);
-}
-
-.button-ghost:hover {
-  background: rgba(255, 255, 255, 0.12);
 }
 
 /* ── Variante com seta dupla + círculo expansivo ──────────────────
@@ -369,14 +356,6 @@ h2 em {
 .text-link .arr-2 {
   left: -25%;
 }
-.button.has-icon:hover .arr-1,
-.text-link:hover .arr-1 {
-  right: -25%;
-}
-.button.has-icon:hover .arr-2,
-.text-link:hover .arr-2 {
-  left: 22px;
-}
 
 .diag .arr-1,
 .diag .arr-2 {
@@ -396,12 +375,6 @@ h2 em {
   z-index: 1;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.button.has-icon:hover .circle,
-.text-link:hover .circle {
-  width: 300px;
-  height: 300px;
-  opacity: 1;
-}
 
 .button.has-icon .text,
 .text-link .text {
@@ -410,15 +383,7 @@ h2 em {
   transform: translateX(-10px);
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.button.has-icon:hover .text,
-.text-link:hover .text {
-  transform: translateX(10px);
-}
 
-.button.has-icon:hover,
-.text-link:hover {
-  border-radius: 999px;
-}
 .button.has-icon:active,
 .text-link:active {
   transform: scale(0.96);
@@ -434,11 +399,6 @@ h2 em {
 .button-yellow.has-icon .circle {
   background: var(--yellow);
 }
-.button-primary.has-icon:hover,
-.button-yellow.has-icon:hover {
-  color: var(--navy);
-  box-shadow: 0 0 0 12px transparent;
-}
 
 /* Acento navy — para botões/links sobre fundo claro (branco ou amarelo) */
 .button-dark.has-icon,
@@ -449,11 +409,6 @@ h2 em {
 .button-dark.has-icon .circle,
 .text-link .circle {
   background: var(--navy);
-}
-.button-dark.has-icon:hover,
-.text-link:hover {
-  color: white;
-  box-shadow: 0 0 0 12px transparent;
 }
 
 .hero-trust {
@@ -527,31 +482,6 @@ h2 em {
   height: 17px;
 }
 
-.social-link:hover {
-  transform: translateY(-4px);
-  color: white;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
-.social-link.facebook:hover {
-  background: #1877f2;
-  border-color: #1877f2;
-}
-.social-link.instagram:hover {
-  background: radial-gradient(
-    circle at 30% 110%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  );
-  border-color: transparent;
-}
-.social-link.whatsapp:hover {
-  background: var(--whatsapp);
-  border-color: var(--whatsapp);
-}
-
 .social-link .tooltip {
   position: absolute;
   bottom: calc(100% + 10px);
@@ -576,10 +506,6 @@ h2 em {
   transform: translateX(-50%);
   border: 5px solid transparent;
   border-top-color: var(--navy-2);
-}
-.social-link:hover .tooltip {
-  opacity: 1;
-  transform: translate(-50%, 0);
 }
 
 .scroll-cue {
@@ -721,9 +647,6 @@ h2 em {
   transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-.product-card:hover img {
-  transform: scale(1.06);
-}
 .card-shade {
   position: absolute;
   inset: 0;
@@ -797,11 +720,6 @@ h2 em {
   transition: 0.25s;
 }
 
-.brand-item:hover {
-  filter: grayscale(0);
-  opacity: 1;
-  transform: translateY(-3px);
-}
 .brand-item img {
   max-height: 45px;
   max-width: 105px;
@@ -876,9 +794,6 @@ h2 em {
   background: var(--yellow);
   color: var(--navy);
 }
-.button-yellow:not(.has-icon):hover {
-  background: #ffdc3b;
-}
 
 .cta-pattern {
   position: absolute;
@@ -947,16 +862,10 @@ h2 em {
   font-style: normal;
   line-height: 1.8;
 }
-.footer-column a:hover {
-  color: white;
-}
 .footer-column address a {
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-color: rgba(255, 255, 255, 0.25);
-}
-.footer-column address a:hover {
-  text-decoration-color: rgba(255, 255, 255, 0.7);
 }
 .footer-column strong {
   color: white;
@@ -1028,11 +937,6 @@ h2 em {
   transform: translateY(0);
 }
 
-.back-to-top:hover {
-  background: var(--navy-2);
-  transform: translateY(-3px) scale(1.05);
-}
-
 .back-to-top svg {
   width: 24px;
   height: 24px;
@@ -1049,9 +953,6 @@ h2 em {
   transition: 0.25s;
 }
 
-.whatsapp-flutuante:hover {
-  transform: translateY(-4px) scale(1.04);
-}
 .whatsapp-flutuante img {
   width: 50px;
   height: 50px;
@@ -1111,6 +1012,118 @@ h2 em {
 .reveal.visible {
   opacity: 1;
   transform: none;
+}
+
+/* ==================== HOVER (SOMENTE EM TELAS COM MOUSE) ====================
+   Tudo que depende de :hover fica isolado aqui, dentro de
+   @media (hover: hover) and (pointer: fine). Isso detecta se o
+   dispositivo tem mouse de verdade — em celular/tablet (touch) essas
+   regras nem carregam, então nada de animação "grudada" ou incompleta
+   por falta de hover. No desktop, funciona exatamente como antes.  */
+@media (hover: hover) and (pointer: fine) {
+  .main-nav > a:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+  .site-header.scrolled .main-nav > a:hover {
+    background: var(--paper);
+  }
+  .main-nav .nav-cta:hover {
+    background: #ffe15c;
+  }
+
+  .button:hover {
+    transform: translateY(-3px);
+  }
+  .button-ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .button.has-icon:hover .arr-1,
+  .text-link:hover .arr-1 {
+    right: -25%;
+  }
+  .button.has-icon:hover .arr-2,
+  .text-link:hover .arr-2 {
+    left: 22px;
+  }
+  .button.has-icon:hover .circle,
+  .text-link:hover .circle {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+  }
+  .button.has-icon:hover .text,
+  .text-link:hover .text {
+    transform: translateX(10px);
+  }
+  .button.has-icon:hover,
+  .text-link:hover {
+    border-radius: 999px;
+  }
+  .button-primary.has-icon:hover,
+  .button-yellow.has-icon:hover {
+    color: var(--navy);
+    box-shadow: 0 0 0 12px transparent;
+  }
+  .button-dark.has-icon:hover,
+  .text-link:hover {
+    color: white;
+    box-shadow: 0 0 0 12px transparent;
+  }
+  .button-yellow:not(.has-icon):hover {
+    background: #ffdc3b;
+  }
+
+  .social-link:hover {
+    transform: translateY(-4px);
+    color: white;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+  .social-link.facebook:hover {
+    background: #1877f2;
+    border-color: #1877f2;
+  }
+  .social-link.instagram:hover {
+    background: radial-gradient(
+      circle at 30% 110%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    border-color: transparent;
+  }
+  .social-link.whatsapp:hover {
+    background: var(--whatsapp);
+    border-color: var(--whatsapp);
+  }
+  .social-link:hover .tooltip {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  .product-card:hover img {
+    transform: scale(1.06);
+  }
+  .brand-item:hover {
+    filter: grayscale(0);
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+  .footer-column a:hover {
+    color: white;
+  }
+  .footer-column address a:hover {
+    text-decoration-color: rgba(255, 255, 255, 0.7);
+  }
+  .back-to-top:hover {
+    background: var(--navy-2);
+    transform: translateY(-3px) scale(1.05);
+  }
+  .whatsapp-flutuante:hover {
+    transform: translateY(-4px) scale(1.04);
+  }
 }
 
 /* ==================== RESPONSIVIDADE ==================== */
@@ -1221,13 +1234,17 @@ h2 em {
     color: white;
     transition: 0.2s;
   }
-  .main-nav > a:hover,
-  .main-nav > a.active {
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--yellow);
-  }
   .main-nav > a.active {
     background: rgba(255, 208, 0, 0.1);
+    color: var(--yellow);
+  }
+
+  /* Hover só entra aqui se o dispositivo tiver mouse de verdade */
+  @media (hover: hover) and (pointer: fine) {
+    .main-nav > a:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--yellow);
+    }
   }
 
   .main-nav .nav-cta {
