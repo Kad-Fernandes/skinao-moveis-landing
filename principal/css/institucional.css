@@ -57,8 +57,9 @@ button {
 }
 
 .container {
-  width: min(calc(100% - 48px), var(--container));
-  margin-inline: auto;
+  max-width: 1300px;
+  margin: 0 auto; /* centraliza a "caixa" na tela */
+  padding: 0 24px; /* ESSE número aqui é a distância da parede que você quer */
 }
 
 .section {
@@ -219,13 +220,7 @@ h2 em {
   stroke-dashoffset: -32.42;
 }
 
-/* ==================== HERO ====================
-   Componente único usado em TODAS as páginas.
-   Por padrão (.hero) é o hero grande e imersivo da Home, com
-   carrossel de imagens. Em páginas internas, some o modificador
-   .hero--compact, que ajusta altura, alinhamento e overlay para um
-   banner de introdução mais curto — sem duplicar toda a estrutura.
-   Basta usar: <section class="hero hero--compact"> */
+/* ==================== HERO ====================*/
 .hero {
   min-height: 840px;
   height: 100svh;
@@ -1212,29 +1207,6 @@ h2 em {
 
 .page-internal {
   background: var(--white);
-}
-
-.page-internal .site-header {
-  background: rgba(255, 255, 255, 0.96);
-  color: var(--navy);
-  box-shadow: 0 1px 0 rgba(26, 43, 94, 0.08);
-}
-
-.page-internal .site-header.scrolled {
-  background: rgba(255, 255, 255, 0.97);
-}
-
-.page-internal .main-nav {
-  color: var(--navy);
-}
-
-.page-internal .main-nav > a.active {
-  background: rgba(255, 208, 0, 0.1);
-  color: var(--yellow);
-}
-
-.page-internal .menu-toggle {
-  color: var(--navy);
 }
 
 /* MANIFESTO */
