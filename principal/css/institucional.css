@@ -1479,31 +1479,55 @@ h2 em {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-}
-
-.about-growth-old {
-  background: var(--paper);
-  color: var(--navy);
-}
-
-.about-growth-new {
-  background: linear-gradient(135deg, var(--navy), #253b78);
   color: var(--white);
 }
 
+.about-growth-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.about-growth-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(9, 23, 57, 0.88) 0%,
+    rgba(9, 23, 57, 0.35) 55%,
+    rgba(9, 23, 57, 0.05) 100%
+  );
+  z-index: 1;
+}
+
+.about-growth-old {
+  background: var(--navy);
+}
+
+.about-growth-new {
+  background: var(--navy);
+}
+
 .about-growth-old strong,
-.about-growth-new strong {
+.about-growth-old span,
+.about-growth-new strong,
+.about-growth-new span {
   font-family: "Manrope", sans-serif;
   font-weight: 800;
   font-size: clamp(4rem, 8vw, 8rem);
   letter-spacing: -0.08em;
   line-height: 0.8;
+  position: relative;
+  z-index: 2;
 }
 
 .about-growth-old span,
 .about-growth-new span {
   margin-top: 22px;
-  font-size: 0.78rem;
+  font-size: 0.98rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1513,7 +1537,7 @@ h2 em {
   position: absolute;
   z-index: 2;
   top: 50%;
-  left: 34%;
+  left: 38%;
   transform: translate(-50%, -50%);
   width: 74px;
   height: 74px;
@@ -1537,7 +1561,7 @@ h2 em {
   gap: 30px;
   margin-top: 25px;
   color: var(--muted);
-  font-size: 0.83rem;
+  font-size: 0.99rem;
 }
 
 .about-growth-caption strong {
