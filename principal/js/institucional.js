@@ -116,6 +116,52 @@
         });
     }
 
+        // ── Lightbox (clique na foto pra ampliar) ────────────────────────
+    // Funciona pra qualquer <img class="zoomable">, em qualquer página —
+    // não precisa repetir essa lógica, só somar a classe na imagem.
+    const lightbox      = document.getElementById('lightbox');
+    const lightboxImg   = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const zoomables     = document.querySelectorAll('.zoomable');
+ 
+    if (lightbox && lightboxImg && zoomables.length) {
+        const openLightbox = (src, alt) => {
+            lightboxImg.src = src;
+            lightboxImg.alt = alt || '';
+            lightbox.classList.add('open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('lightbox-open');
+        };
+ 
+        const closeLightbox = () => {
+            lightbox.classList.remove('open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('lightbox-open');
+        };
+ 
+        zoomables.forEach(img => {
+            img.addEventListener('click', () => openLightbox(img.src, img.alt));
+        });
+ 
+        // Fecha no botão X
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', closeLightbox);
+        }
+ 
+        // Fecha clicando fora da foto (no fundo escuro)
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+ 
+        // Fecha com Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+                closeLightbox();
+            }
+        });
+    }
+ 
+
     // ── Banner de Cookies & GA4 Consent ─────────────────────────────
     const cookieBanner = document.getElementById('cookie-banner');
     const btnAcceptCookies = document.getElementById('accept-cookies');

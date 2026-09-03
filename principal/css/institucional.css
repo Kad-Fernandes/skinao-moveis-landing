@@ -1035,6 +1035,74 @@ h2 em {
   filter: brightness(1) invert(0);
 }
 
+/* ==================== LIGHTBOX (clique pra ampliar foto) ====================*/
+.zoomable {
+  cursor: zoom-in;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(9, 23, 57, 0.92);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox img {
+  max-width: min(100%, 1100px);
+  max-height: 88vh;
+  border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  transform: scale(0.92);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: default;
+}
+
+.lightbox.open img {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
 /* ==================== BANNER DE COOKIES ==================== */
 .cookie-banner {
   position: fixed;
@@ -1501,6 +1569,7 @@ h2 em {
     rgba(9, 23, 57, 0.05) 100%
   );
   z-index: 1;
+  pointer-events: none;
 }
 
 .about-growth-old {
