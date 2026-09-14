@@ -2267,3 +2267,273 @@ body.lightbox-open {
   outline-offset: 3px;
   border-radius: 4px;
 }
+
+/* ==================== PÁGINA DE CONTATO ==================== */
+
+/* Intro compacta (navy) */
+.contact-intro {
+  background: var(--navy);
+  color: white;
+  padding: 152px 0 64px;
+}
+.contact-intro-inner {
+  max-width: 620px;
+}
+.contact-intro h1 {
+  color: white;
+  margin: 18px 0 14px;
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+}
+.contact-intro-lead {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.05rem;
+  max-width: 480px;
+}
+
+/* Indicador "Aberto agora / Fechado" */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding: 10px 18px 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+}
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+.status-badge.is-open .status-dot {
+  background: var(--whatsapp);
+  box-shadow: 0 0 0 4px rgba(41, 167, 27, 0.18);
+}
+.status-badge.is-closed .status-dot {
+  background: #ff5b5b;
+  box-shadow: 0 0 0 4px rgba(255, 91, 91, 0.15);
+}
+
+/* Grid principal: WhatsApp + Local */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.contact-card {
+  border-radius: var(--radius);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card WhatsApp (navy) */
+.contact-card--whatsapp {
+  background: var(--navy);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-card--whatsapp h2 {
+  color: white;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  margin: 14px 0 16px;
+}
+.contact-card--whatsapp p {
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 380px;
+  margin-bottom: 34px;
+}
+.contact-card-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.contact-card-actions .button-yellow {
+  margin-top: 0;
+}
+
+/* Card Local (claro, com mapa) */
+.contact-card--local {
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+.contact-card--local address {
+  font-style: normal;
+  display: block;
+  margin: 16px 0 26px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+.contact-card--local address a {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(26, 43, 94, 0.25);
+  text-underline-offset: 4px;
+}
+
+.contact-hours {
+  list-style: none;
+  margin-bottom: 26px;
+  border-top: 1px solid var(--line);
+}
+.contact-hours li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.contact-hours li span {
+  color: var(--muted);
+}
+.contact-hours li strong {
+  color: var(--navy);
+}
+.contact-hours li .today-tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--navy);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.contact-map {
+  border-radius: 16px;
+  overflow: hidden;
+  line-height: 0;
+}
+.contact-map iframe {
+  display: block;
+  width: 100%;
+}
+
+/* Faixa de Assistência Técnica */
+.contact-assist-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 42px 46px;
+  border-radius: var(--radius);
+  background: var(--paper);
+  border-left: 4px solid var(--yellow);
+}
+.contact-assist-inner h2 {
+  margin: 10px 0 8px;
+  font-size: 1.55rem;
+}
+.contact-assist-copy p {
+  color: var(--muted);
+  max-width: 420px;
+}
+.contact-assist-actions {
+  text-align: right;
+}
+.contact-assist-actions strong {
+  display: block;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.3rem;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+.contact-assist-actions .contact-card-actions {
+  justify-content: flex-end;
+}
+.contact-assist-actions .text-link {
+  padding: 20px 32px;
+  margin-top: 0;
+  font-weight: 800;
+}
+
+/* Faixa "Venha nos visitar" (foto real) */
+.contact-visit {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.contact-visit-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contact-visit-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(9, 23, 57, 0.88) 0%,
+    rgba(9, 23, 57, 0.35) 55%,
+    rgba(9, 23, 57, 0.05) 100%
+  );
+}
+.contact-visit-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding-bottom: 56px;
+}
+.contact-visit-content h2 {
+  color: white;
+  margin: 14px 0 10px;
+}
+.contact-visit-content p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-assist-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .contact-assist-actions {
+    text-align: left;
+  }
+  .contact-assist-actions .contact-card-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-intro {
+    padding: 128px 0 50px;
+  }
+  .contact-card {
+    padding: 34px 28px;
+  }
+  .contact-assist-inner {
+    padding: 30px 26px;
+  }
+  .contact-visit {
+    min-height: 320px;
+  }
+}

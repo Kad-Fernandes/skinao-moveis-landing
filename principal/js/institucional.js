@@ -200,4 +200,73 @@
             }
         });
     }
+
+    // ── Indicador "Aberto agora / Fechado" (página de contato) ──────
+    // Horário: Seg–Sex 08h–18h · Sáb 08h–12h · Dom fechado.
+    const storeStatus = document.getElementById('storeStatus');
+    if (storeStatus) {
+        const dot  = storeStatus.querySelector('.status-dot');
+        const text = storeStatus.querySelector('.status-text');
+
+        const pad2 = n => String(n).padStart(2, '0');
+
+        const setStatus = (open, message) => {
+            storeStatus.classList.toggle('is-open', open);
+            storeStatus.classList.toggle('is-closed', !open);
+            if (text) text.textContent = message;
+        };
+
+        const updateStoreStatus = () => {
+            const now = new Date();
+            const day = now.getDay(); // 0 = domingo … 6 = sábado
+            const minutesNow = now.getHours() * 60 + now.getMinutes();
+
+            const OPEN = 8 * 60;
+            const CLOSE_WEEKDAY = 18 * 60;
+            const CLOSE_SATURDAY = 12 * 60;
+
+            if (day >= 1 && day <= 5) {
+                // Segunda a sexta
+                if (minutesNow < OPEN) {
+                    setStatus(false, `Fechado — abrimos hoje às ${pad2(8)}h`);
+                } else if (minutesNow < CLOSE_WEEKDAY) {
+                    setStatus(true, 'Aberto agora — fecha às 18h');
+                } else if (day === 5) {
+                    setStatus(false, 'Fechado — abrimos sábado às 08h');
+                } else {
+                    setStatus(false, 'Fechado — abrimos amanhã às 08h');
+                }
+            } else if (day === 6) {
+                // Sábado
+                if (minutesNow < OPEN) {
+                    setStatus(false, 'Fechado — abrimos hoje às 08h');
+                } else if (minutesNow < CLOSE_SATURDAY) {
+                    setStatus(true, 'Aberto agora — fecha ao meio-dia');
+                } else {
+                    setStatus(false, 'Fechado — abrimos segunda às 08h');
+                }
+            } else {
+                // Domingo
+                setStatus(false, 'Fechado — abrimos amanhã às 08h');
+            }
+
+            // Marca visualmente o dia atual na lista de horários, se existir
+            let todaySelector = null;
+            if (day >= 1 && day <= 5) todaySelector = '[data-day="semana"]';
+            else if (day === 6) todaySelector = '[data-day="sabado"]';
+
+            document.querySelectorAll('.contact-hours .today-tag').forEach(tag => tag.remove());
+            const todayRow = todaySelector ? document.querySelector(todaySelector) : null;
+            if (todayRow) {
+                const tag = document.createElement('span');
+                tag.className = 'today-tag';
+                tag.textContent = 'Hoje';
+                todayRow.querySelector('span').appendChild(tag);
+            }
+        };
+
+        updateStoreStatus();
+        // Reavalia a cada minuto, caso a pessoa deixe a aba aberta
+        setInterval(updateStoreStatus, 60000);
+    }
 })();
