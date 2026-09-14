@@ -2260,3 +2260,10 @@ body.lightbox-open {
     animation: none;
   }
 }
+
+/* Foco visível pra quem navega só pelo teclado (Tab) */
+:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
