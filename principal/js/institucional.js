@@ -228,26 +228,26 @@
             if (day >= 1 && day <= 5) {
                 // Segunda a Sexta
                 if (minutesNow < OPEN) {
-                    setStatus(false, `Fechado — abrimos hoje às ${pad2(8)}h`);
+                    setStatus(false, `Fechado - Abrimos hoje às ${pad2(8)}h`);
                 } else if (minutesNow < CLOSE_WEEKDAY) {
-                    setStatus(true, 'Aberto agora — fecha às 18h');
+                    setStatus(true, 'Aberto agora - Fecha às 18h');
                 } else if (day === 5) {
-                    setStatus(false, 'Fechado — abrimos sábado às 08h');
+                    setStatus(false, 'Fechado - Abrimos sábado às 08h');
                 } else {
-                    setStatus(false, 'Fechado — abrimos amanhã às 08h');
+                    setStatus(false, 'Fechado - Abrimos amanhã às 08h');
                 }
             } else if (day === 6) {
                 // Sábado
                 if (minutesNow < OPEN) {
-                    setStatus(false, 'Fechado — abrimos hoje às 08h');
+                    setStatus(false, 'Fechado - Abrimos hoje às 08h');
                 } else if (minutesNow < CLOSE_SATURDAY) {
-                    setStatus(true, 'Aberto agora — fecha ao meio-dia');
+                    setStatus(true, 'Aberto agora - Fecha ao meio-dia');
                 } else {
-                    setStatus(false, 'Fechado — abrimos segunda às 08h');
+                    setStatus(false, 'Fechado - Abrimos segunda às 08h');
                 }
             } else {
                 // Domingo
-                setStatus(false, 'Fechado — abrimos amanhã às 08h');
+                setStatus(false, 'Fechado - Abrimos amanhã às 08h');
             }
 
             // Marca visualmente o dia atual na lista de horários, se existir
@@ -266,7 +266,7 @@
         };
 
         updateStoreStatus();
-        // Reavalia a cada minuto, caso a pessoa deixe a aba aberta
+        // Reavalia a cada minuto
         setInterval(updateStoreStatus, 60000);
     }
 })();
