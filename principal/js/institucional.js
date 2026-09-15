@@ -226,7 +226,7 @@
             const CLOSE_SATURDAY = 12 * 60;
 
             if (day >= 1 && day <= 5) {
-                // Segunda a sexta
+                // Segunda a Sexta
                 if (minutesNow < OPEN) {
                     setStatus(false, `Fechado — abrimos hoje às ${pad2(8)}h`);
                 } else if (minutesNow < CLOSE_WEEKDAY) {
